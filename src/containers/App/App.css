@@ -1,6 +1,7 @@
 .content {
     position: absolute;
+    text-align: center;
     top: 50px;
     width: 100%;
-    margin: 20px;
+    margin: 20px auto;
 }
