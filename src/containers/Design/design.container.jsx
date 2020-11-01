@@ -13,10 +13,18 @@ class Design extends React.Component {
         this.state = {
             change: false,
             swatches: ['white', 'pink', 'red'],
-            toggled: ''
+            toggled: '',
+            picked: []
         }
 
         
+    }
+
+    addFlowers(e) {
+        console.log('flower',e.target.innerHTML)
+        this.setState((state) =>{
+            return {picked: [...state.picked, e.target.innerHTML]}
+        })
     }
 
     addSwatch(e) {
@@ -37,6 +45,9 @@ class Design extends React.Component {
         })
     }
 
+    componentDidUpdate() {
+        console.log('you have picked', this.state.picked)
+    }
     render() {
         if (this.state.change) {
             return(
@@ -48,7 +59,6 @@ class Design extends React.Component {
                     <br></br>
                     <Swatch swatch={this.addSwatch.bind(this)}/>
                     <br></br>
-                    <FlowerChoices/>
                 </div>
             )
         } else {
@@ -59,7 +69,7 @@ class Design extends React.Component {
                     <Pallet id={1} swatch={this.state.swatches[1]} changePallet={this.changePallet.bind(this)}/>
                     <Pallet id={2} swatch={this.state.swatches[2]} changePallet={this.changePallet.bind(this)}/>
                     <br></br>
-                    <FlowerChoices/>
+                    <FlowerChoices colors={this.state.swatches} addFlower={this.addFlowers.bind(this)}/>
                 </div>
             )
         }
