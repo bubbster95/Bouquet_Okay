@@ -25,10 +25,23 @@
     position: relative;
     z-index: 1;
     border: none;
-    margin: 20px 20px 20px;
+    top: -20px;
+    margin: 20px 20px 20px 20px;
     width: 200px;
     height: 300px;
     text-transform: capitalize;
+}
+
+.remove-flower {
+    position: relative;
+    z-index: 4;
+    margin: auto;
+    cursor: pointer;
+    top: 20px;
+    left: 90px;
+    background-color: pink;
+    border: none;
+    border-radius: 5px;
 }
 
 .bouquet-name {
@@ -50,7 +63,7 @@
     top: -150px;
     width: 204px;
     font-size: 20px;
-    background-color: rgba(255, 192, 203, .5);
+    background-color: rgba(255, 192, 203, .7);
 }
 .bouquet-container::-webkit-scrollbar {
     width: 10%;
@@ -68,4 +81,13 @@
 .bouquet-container::-webkit-scrollbar-thumb:hover {
     background-color: lightpink;
     border-radius: 5px 5px 0px 0px;
+}
+
+.flower-total {
+    position: relative;
+    z-index: 20;
+    background-color: red;
+    width: 200px;
+    height: 200px;
+    display: block;
 }

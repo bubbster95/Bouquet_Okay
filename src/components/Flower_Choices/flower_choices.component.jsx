@@ -69,10 +69,12 @@ class FlowerChoices extends React.Component {
     render() {
         return(
             <div className='flower-container'>
-            <h1 id='flowers-title'>Choose {this.props.quantity} Flowers</h1>
-            <div className='flower-choices'>
-                {this.plantFlowers(this.props.colors)}
-            </div>
+                <h1 id='flowers-title'>
+                    Choose {this.props.quantity - this.props.picked} Flowers
+                </h1>
+                <div className='flower-choices'>
+                    {this.plantFlowers(this.props.colors)}
+                </div>
 
             </div>
         )
