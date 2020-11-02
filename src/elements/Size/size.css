@@ -1,0 +1,17 @@
+.size {
+    width: 100px;
+    height: 100px;
+    border: solid;
+    background-color: white;
+    border-color: rgb(200, 225, 250);
+    margin: 20px;
+    border-radius: 50px;
+}
+
+.size:hover {
+    cursor: pointer;
+    position: relative;
+    top: -3px;
+    box-shadow: 0px 2px lightslategrey;
+    border-color: rgb(130, 200, 255);
+}

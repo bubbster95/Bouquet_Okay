@@ -7,28 +7,61 @@ import './flower_choices.css'
 class FlowerChoices extends React.Component {
     constructor(props) {
         super(props);
+
         this.plantFlowers = this.plantFlowers.bind(this)
     }
-    pickFlower(color, key) {
-        console.log('you added a ' + color + ' ' + key + ' to the Cart')
+
+    handleHover(id) {
+        let pTag = document.getElementById(id);
+        pTag.style.display = 'block';
+    }
+
+    handleHoverOff(id) {
+        let pTag = document.getElementById(id);
+        pTag.style.display = 'none';
     }
 
     plantFlowers(swatch) {
         let flowersKeys = Object.keys(Flowers)
-        console.log(flowersKeys)
         return flowersKeys.map(key => {
             let filter = Flowers[key].colors.filter(color => { 
                 return swatch.includes(color) ? true : false
             })
             return filter.map(color => {
-                return <button
-                className='flower'
-                onClick={this.props.addFlower}
-                style={{backgroundColor: color}}
-                key={color+key}
-                id={color + key}
-                >{color +' '+ key}
-                </button>
+
+                let index = Flowers[key].colors.indexOf(color);
+                let url = Flowers[key].url[index];
+                let hoverText = Flowers[key].meaning[index]
+                return <div key={color+key}className='flower-box'>
+
+                    <button
+                    className='flower'
+                    onClick={this.props.addFlower}
+                    onMouseOver={() => this.handleHover(`${color}-${key}-text`)}
+                    onMouseLeave={() => this.handleHoverOff(`${color}-${key}-text`)}
+                    style={{backgroundImage: `url(${url})`, backgroundSize: 'contain', backgroundRepeat: 'no-repeat', backgroundPosition: 'bottom'}}
+                    key={color+key}
+                    id={color + key}
+                    value={Flowers[key].value}
+                    ></button>
+
+                    <h2 
+                        id={`${color}-${key}-title`}
+                        onClick={this.props.addFlower}
+                        onMouseOver={() => this.handleHover(`${color}-${key}-text`)}
+                        onMouseLeave={() => this.handleHoverOff(`${color}-${key}-text`)}
+                        className='flower-name'
+                    >{color +' '+ key}
+                    </h2>
+
+                    <p
+                    id={`${color}-${key}-text`}
+                    onClick={this.props.addFlower}
+                    onMouseOver={() => this.handleHover(`${color}-${key}-text`)}
+                    onMouseLeave={() => this.handleHoverOff(`${color}-${key}-text`)}
+                    className='hover-text'>{hoverText}</p>
+                    
+                </div>
             })
         })
     }
@@ -36,7 +69,7 @@ class FlowerChoices extends React.Component {
     render() {
         return(
             <div className='flower-container'>
-            <h1 id='flowers-title'>Choose Your Flowers</h1>
+            <h1 id='flowers-title'>Choose {this.props.quantity} Flowers</h1>
             <div className='flower-choices'>
                 {this.plantFlowers(this.props.colors)}
             </div>

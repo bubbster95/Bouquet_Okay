@@ -10,8 +10,8 @@ class Pallet extends React.Component {
                 className='pallet'
                 id={this.props.id}
                 style={{backgroundColor: this.props.swatch}}
-                onClick={this.props.changePallet}
-            >{this.props.swatch}</button>
+                onClick={this.props.toggleSwatches}
+            >{this.props.lable}</button>
         ) 
     }
 }
