@@ -6,6 +6,7 @@ import FlowerChoices from '../../components/Flower_Choices/flower_choices.compon
 import Bouquet from '../../components/Bouquet/bouquet.component'
 import Size from '../../elements/Size/size.element'
 import FlowerTotal from '../../elements/Total/flower_total.element'
+import Congrats from '../Congrats/congrats.container'
 
 import './design.css';
 
@@ -19,8 +20,12 @@ class Design extends React.Component {
             toggled: '',
             picked: [],
             size: 'small',
-            quantity: 3
+            quantity: 3,
+            congrats: false
         }
+
+        this.resetBouquet = this.resetBouquet.bind(this)
+        this.congrats = this.congrats.bind(this)
     }
 
     toggleSwatches(e) {
@@ -74,8 +79,28 @@ class Design extends React.Component {
         })
     }
 
-    addToCart() {
-        console.log(`Added to cart`)
+    resetBouquet() {
+        this.setState({
+            change: false,
+            swatches: ['white', 'pink', 'red'],
+            toggled: '',
+            picked: [],
+            size: 'small',
+            quantity: 3
+        })
+    }
+
+    congrats() {
+        console.log()
+        this.setState((state)=>{
+            return {congrats: !state.congrats}
+        })
+    }
+
+    addToCart(e) {
+        this.props.cart(e)
+        this.resetBouquet()
+        this.congrats()
     }
 
     componentDidUpdate() {
@@ -83,7 +108,14 @@ class Design extends React.Component {
         if (size) {
         size.style.backgroundColor = 'pink';
         }
+        let congrats = document.getElementsByClassName('congrats-container')
+        if (this.state.congrats) {
+            congrats[0].style.display = 'block'
+        } else if (this.state.congrats === false && congrats[0]) {
+            congrats[0].style.display = 'none'
+        }
     }
+
 
     render() {
         if (this.state.change) {
@@ -104,6 +136,8 @@ class Design extends React.Component {
             return(
                 <div className='content'>
                     <h1 className='complete-title'>Happy With Your Bouquet?</h1>
+                    <button className='check-out' onClick={this.resetBouquet}>No, Start Over</button>
+                    <br></br>
                     <Bouquet
                     remove={this.removeFlower.bind(this)}
                     flowers={this.state.picked}
@@ -111,7 +145,7 @@ class Design extends React.Component {
                     <FlowerTotal
                     flowers={this.state.picked}
                     quantity={this.state.quantity}/> 
-                    <button onClick={this.addToCart.bind(this)}>Yes, Add to cart</button>
+                    <button className='check-out' onClick={this.addToCart.bind(this)}>Add to cart</button>
                 </div>
             )
         } else {
@@ -129,6 +163,7 @@ class Design extends React.Component {
                     quantity={this.state.quantity}
                     colors={this.state.swatches}
                     addFlower={this.addFlowers.bind(this)}/>
+                    <Congrats close={this.congrats.bind(this)}/>
                 </div>
             )
         }

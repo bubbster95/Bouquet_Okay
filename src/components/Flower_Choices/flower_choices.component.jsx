@@ -72,10 +72,9 @@ class FlowerChoices extends React.Component {
                 <h1 id='flowers-title'>
                     Choose {this.props.quantity - this.props.picked} Flowers
                 </h1>
-                <div className='flower-choices'>
+                <div id='flower-choices'>
                     {this.plantFlowers(this.props.colors)}
                 </div>
-
             </div>
         )
     }

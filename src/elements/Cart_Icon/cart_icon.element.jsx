@@ -14,6 +14,7 @@ class CartIcon extends React.Component {
                         src='/assets/images/cartIcon.png'
                         alt='Cart icon'
                     ></img>
+                    <div id='cart-count'>{this.props.cartCount}</div>
                 </button>
             </Link>
         )

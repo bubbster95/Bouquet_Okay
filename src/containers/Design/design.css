@@ -1,0 +1,13 @@
+.check-out {
+    position: relative;
+    margin: 10px auto 20px;
+    height: 25px;
+    background-color: pink;
+    border: none;
+    border-radius:  5px;
+}
+
+.check-out:hover {
+    top: -2px;
+    background-color: rgba(255, 192, 203, .6);
+}

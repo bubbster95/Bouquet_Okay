@@ -9,14 +9,14 @@ class DesignChoose extends React.Component {
         if (this.props.design) {
             return (
                 <div className='design-choose' id='design'>
-                    <img 
-                        className='design-image'
-                        src='/assets/images/reactLogo.png'
-                        alt='A beautiful bouquet design'
-                    ></img>
                     <Link
                     to='/design'
                     style={{ textDecoration: 'none' }}>
+                        <img
+                            className='design-image'
+                            src='/assets/floral-supplies.jpg'
+                            alt='A beautiful bouquet design'
+                        ></img>
                         <button id='design-button'>
                             Design a bouquet
                         </button>
@@ -27,14 +27,14 @@ class DesignChoose extends React.Component {
         else {
             return(
                 <div className='design-choose' id='choose'>
-                    <img 
-                        className='design-image'
-                        src='/assets/images/reactLogo.png'
-                        alt='A beautiful bouquet design'
-                    ></img>
                     <Link
                         to='/choose'
                         style={{ textDecoration: 'none' }}>
+                        <img 
+                            className='design-image'
+                            src='/assets/Bouquets/pinkBouquet.jpg'
+                            alt='A beautiful bouquet design'
+                        ></img>
                         <button id='choose-button'>
                             Choose a bouquet
                         </button>

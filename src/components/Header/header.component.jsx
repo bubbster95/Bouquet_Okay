@@ -10,7 +10,7 @@ class Header extends React.Component {
         return(
             <div className='header'>
                 <Logo />
-                <CartIcon />
+                <CartIcon cartCount={this.props.cartCount}/>
             </div>
         )
     }

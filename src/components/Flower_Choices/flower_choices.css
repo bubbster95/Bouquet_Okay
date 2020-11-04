@@ -1,10 +1,10 @@
-.flower-choices {
+#flower-choices {
     position: relative;
     display: flex;
     justify-content: space-between;
     border: solid pink;
     border-radius: 5px;
-    overflow-x: scroll;
+    overflow: scroll;
     width: 90%;
     margin: auto;
 }
@@ -61,20 +61,20 @@
     font-size: 20px;
     background-color: rgba(255, 192, 203, .7);
 }
-div>.flower-choices::-webkit-scrollbar {
+div>#flower-choices::-webkit-scrollbar {
     width: 10%;
     height: 20px;
 }
-div>.flower-choices::-webkit-scrollbar-thumb {
+div>#flower-choices::-webkit-scrollbar-thumb {
     background-color: pink;
     border-radius: 5px 5px 0px 0px;
 }
 
-div>.flower-choices::-webkit-scrollbar-track {
+div>#flower-choices::-webkit-scrollbar-track {
     background-color: rgba(255, 192, 203, .5);
 }
 
-div>.flower-choices::-webkit-scrollbar-thumb:hover {
+div>#flower-choices::-webkit-scrollbar-thumb:hover {
     background-color: lightpink;
     border-radius: 5px 5px 0px 0px;
 }

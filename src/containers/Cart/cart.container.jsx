@@ -1,12 +1,14 @@
 import React from 'react';
 
+import Items from '../../components/Items/items.component'
+
 import './cart.css'
 
 class Cart extends React.Component {
     render() {
         return(
             <div className='content'>
-                <div className='item'>You bought this</div>
+                <Items cart={this.props.cart}/>
             </div>
         )
     }
