@@ -8,6 +8,16 @@
     border-radius: 5px;
 }
 
+.bouquet-item-text {
+    position: relative;
+    width: 85%;
+    margin: 0px;
+    font-size: smaller;
+    text-align: left;
+    display: block;
+    background-color: pink;
+}
+
 .item-image {
     display: inline-block;
     width: 25%;

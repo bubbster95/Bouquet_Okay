@@ -4,3 +4,8 @@
     text-align: center;
     float: none;
 }
+
+#full-price {
+    float: right;
+    margin: 10px;
+}

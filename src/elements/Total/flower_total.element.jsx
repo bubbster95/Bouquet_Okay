@@ -8,7 +8,7 @@ class FlowerTotal extends React.Component {
             return(index === 0) ? total
             : parseInt(total) + parseInt(flower.value)
         }, parseInt(flowers[0].value))
-        return <h2 id="price">{`$${sum*quantity}`}</h2>
+        return <h2 value={sum*quantity} id="price">{`$${sum*quantity}`}</h2>
     }
 
     render(){

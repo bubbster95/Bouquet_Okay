@@ -1,0 +1,9 @@
+.confirmation-container {
+    position: fixed;
+    z-index: 200;
+    width: 75%;
+    height: 200px;
+    top: 200px;
+    left: 12%;
+    background-color: pink;
+}

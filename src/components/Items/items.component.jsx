@@ -10,26 +10,40 @@ class Items extends React.Component {
 
         }
         return this.props.cart.map((item, index) => {
-            console.log('index', index)
-            return (
-                <div className='single-item'>
-                    <div className='item-image' style={{backgroundImage: item.image, backgroundSize: 'contain', backgroundRepeat: 'no-repeat', backgroundPosition: 'center'}}></div>
-                    <div className='item-specs'>
-                        <button className='remove' value={index} onClick={this.props.remove}>X</button>
-                        <h2 key={`custom-title${item.colors[0]}`}>Cutsom Bouquet</h2>
-                        <div key={`custom-colors${item.colors[0]}`}className='item-colors'>
-                            {item.colors.map(color => {
-                                return <div
-                                    className='item-color'
-                                    key={color}
-                                    style={{
-                                        backgroundColor: color,
-                                        borderColor: 'rgb(200, 225, 250)'}}>{color}</div>})}
+            if (item.colors) {
+                return (
+                    <div className='single-item'>
+                        <div className='item-image' style={{backgroundImage: item.image, backgroundSize: 'contain', backgroundRepeat: 'no-repeat', backgroundPosition: 'center'}}></div>
+                        <div className='item-specs'>
+                            <button className='remove' value={index} onClick={this.props.remove}>X</button>
+                            <h2 key={`custom-title${item.colors[0]}`}>Cutsom Bouquet</h2>
+                            <div key={`custom-colors${item.colors[0]}`}className='item-colors'>
+                                {item.colors.map(color => {
+                                    return <div
+                                        className='item-color'
+                                        key={color}
+                                        style={{
+                                            backgroundColor: color,
+                                            borderColor: 'rgb(200, 225, 250)'}}>{color}</div>})}
+                            </div>
+                            <div className='item-price'>${item.price}</div>
                         </div>
-                        <div className='item-price'>{item.price}</div>
                     </div>
-                </div>
-            )
+                )
+            } else {
+                return (
+                    <div className='single-item'>
+                        <div className='item-image' style={{backgroundImage: item.image, backgroundSize: 'contain', backgroundRepeat: 'no-repeat', backgroundPosition: 'center'}}></div>
+                        <div className='item-specs'>
+                            <button className='remove' value={index} onClick={this.props.remove}>X</button>
+                            <h2 key={`name-${item.name}`}>{item.name}</h2>
+                            <p className='bouquet-item-text' key={`text-${item.text}`}>{item.text}</p>
+                            <div className='item-price'>${item.price}</div>
+                        </div>
+                    </div>
+                )
+            }
+            
         })
     }
 }

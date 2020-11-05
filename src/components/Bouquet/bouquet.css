@@ -46,7 +46,7 @@
 
 .remove-flower:hover {
     top: 17px;
-    background-color: rgba(255, 192, 203, .7);
+    background-color: rgb(255, 192, 203, .7);
 }
 
 .bouquet-name {

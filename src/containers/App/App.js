@@ -24,9 +24,19 @@ class App extends React.Component {
   }
 
   addToCart(e) {
+    if (e.target.parentElement.children[0].className === 'bouquet') {
+        let image = e.target.parentElement.children[0].style.backgroundImage;
+        let price = e.target.parentElement.children[1].innerHTML;
+        let name = e.target.parentElement.children[2].innerHTML;
+        let text = e.target.parentElement.children[3].innerHTML;
+        this.setState({
+          cart: [...this.state.cart, {image: image, price: price, name: name, text: text}],
+          cartCount: this.state.cartCount + 1
+        })
+    }
     if (e.target.parentElement.children[0].className === 'complete-title'){
       let image = e.target.parentElement.children[3].children[0].getElementsByTagName('DIV')[0].style.backgroundImage;
-      let price = e.target.parentElement.children[4].children[1].innerHTML;
+      let price = e.target.parentElement.children[4].children[1].attributes[0].value;
       let colorDivs = [].slice.call(e.target.parentElement.children[3].children[0].getElementsByTagName('DIV')[1].children);
       let colors = colorDivs.map(color => {return color.innerHTML})
       this.setState({
@@ -40,7 +50,6 @@ class App extends React.Component {
     let index = e.target.value
     let splice = this.state.cart
     splice.splice(index,1)
-    console.log('splice', splice, 'cart', this.state.cart)
 
     this.setState((state) =>{
       return {
@@ -51,7 +60,7 @@ class App extends React.Component {
   }
 
   componentDidUpdate() {
-    console.log(this.state.cart)
+    console.log('pricing', this.state.cart)
   }
 
   render() {
@@ -67,7 +76,7 @@ class App extends React.Component {
                 <Design cart={this.addToCart.bind(this)}/>
             </Route>
             <Route path='/choose'>
-                <Choose />
+                <Choose addBouquet={this.addToCart.bind(this)}/>
             </Route>
             <Route path='/'>
                 <Home />
