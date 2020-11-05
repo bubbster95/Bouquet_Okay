@@ -1,0 +1,20 @@
+.items-container, .total {
+    border: solid;
+    border-radius: 5px;
+    border-color: pink;
+    width: 90%;
+    margin: 10px auto;
+}
+
+.cart-title {
+    margin: auto;
+}
+
+.total {
+    height: 50px;
+}
+
+.total-title {
+    float: left;
+    margin: 10px;
+}

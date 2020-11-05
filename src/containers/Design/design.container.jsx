@@ -141,7 +141,9 @@ class Design extends React.Component {
                     <Bouquet
                     remove={this.removeFlower.bind(this)}
                     flowers={this.state.picked}
-                    quantity={this.state.quantity}/>
+                    quantity={this.state.quantity}
+                    swatches={this.state.swatches}
+                    />
                     <FlowerTotal
                     flowers={this.state.picked}
                     quantity={this.state.quantity}/> 

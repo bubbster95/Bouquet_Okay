@@ -11,7 +11,7 @@ class Bouquet extends React.Component {
 
 
 
-    addFlowers(flowers, quantity, remove) {
+    addFlowers(flowers, quantity, remove, swatches) {
         return flowers.map(flower => {
             return <div key={`selected-${flower.id}`} className='bouquet-box'>
                 <button className='remove-flower' onClick={remove}>X</button>
@@ -26,6 +26,11 @@ class Bouquet extends React.Component {
                 </div>
                 <h2 className='bouquet-name'>{flower.nextSibling.innerText}</h2>
                 <p className='bouquet-text'>{`$${flower.value * quantity}`}</p>
+                <div className='bouquet-colors'>
+                    {swatches.map((color, index) => {
+                        return <div style={{display: 'none'}} key={`bouquet-${color}-${index}`}>{color}</div>
+                    })}
+                </div>
             </div>
         })
     }
@@ -33,7 +38,7 @@ class Bouquet extends React.Component {
     render() {
         return(
             <div className='bouquet-container'>
-                {this.addFlowers(this.props.flowers, this.props.quantity, this.props.remove)}
+                {this.addFlowers(this.props.flowers, this.props.quantity, this.props.remove, this.props.swatches)}
             </div>
         )
     }

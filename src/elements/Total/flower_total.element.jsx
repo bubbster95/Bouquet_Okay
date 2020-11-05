@@ -14,7 +14,7 @@ class FlowerTotal extends React.Component {
     render(){
         return (
             <div id='flower-total'>
-            <h1 className='total-title'>This Bouquet Comes To:</h1>
+            <h2 className='flower-total-title'>This Bouquet Comes To:</h2>
             {this.flowerTotal(this.props.flowers, this.props.quantity)}
             </div>
         )

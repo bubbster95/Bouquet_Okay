@@ -1,4 +1,64 @@
-.item-image {
-    width: 100px;
+.single-item {
+    width: 99%;
     height: 100px;
+    margin: 10px 0;
+    border: solid;
+    border-color: rgba(0, 0, 0, 0);
+    border-bottom-color: rgba(255, 192, 203, .5);
+    border-radius: 5px;
+}
+
+.item-image {
+    display: inline-block;
+    width: 25%;
+    height: 100%;
+}
+
+.item-specs {
+    position: relative;
+    top: -25px;
+    width: 75%;
+    height: 100%;
+    display: inline-block;
+}
+
+.item-specs>h2 {
+    margin: 5px 0px;
+    width: 100%;
+    text-align: left;
+}
+
+.item-price {
+    text-align: right;
+    margin: 5px 10px;
+}
+
+.item-colors {
+    text-align: left;
+}
+
+.item-color {
+    position: relative;
+    display: inline;
+    margin: 10px;
+    padding: 2px;
+    text-align: center;
+    border-radius: 5px;
+    border: solid;
+    border-width: 2px;
+}
+
+.remove {
+    position: relative;
+    z-index: 4;
+    float: right;
+    margin: auto;
+    cursor: pointer;
+    background-color: pink;
+    border: none;
+    border-radius: 5px;
+}
+.remove:hover {
+    top: -2px;
+    background-color: rgba(255, 192, 203, .7);
 }

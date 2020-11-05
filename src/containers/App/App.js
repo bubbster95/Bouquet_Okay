@@ -22,18 +22,32 @@ class App extends React.Component {
       cartCount: 0
     }
   }
+
   addToCart(e) {
-    console.log('add to cart', e.target.parentElement.children[0])
     if (e.target.parentElement.children[0].className === 'complete-title'){
-      let image = e.target.parentElement.children[3].children[0].getElementsByTagName('DIV')[0].style.backgroundImage
-      // let divs = image.getElementsByTagName('DIV')
-      console.log('image',image )
-      let price = e.target.parentElement.children[4].children[1].innerHTML
+      let image = e.target.parentElement.children[3].children[0].getElementsByTagName('DIV')[0].style.backgroundImage;
+      let price = e.target.parentElement.children[4].children[1].innerHTML;
+      let colorDivs = [].slice.call(e.target.parentElement.children[3].children[0].getElementsByTagName('DIV')[1].children);
+      let colors = colorDivs.map(color => {return color.innerHTML})
       this.setState({
-        cart: [...this.state.cart, {image: image, price: price}],
+        cart: [...this.state.cart, {image: image, price: price, colors: colors}],
         cartCount: this.state.cartCount + 1
       })
     }
+  }
+
+  removeItem(e) {
+    let index = e.target.value
+    let splice = this.state.cart
+    splice.splice(index,1)
+    console.log('splice', splice, 'cart', this.state.cart)
+
+    this.setState((state) =>{
+      return {
+        cart: splice,
+        cartCount: state.cartCount-1
+      }
+    })
   }
 
   componentDidUpdate() {
@@ -47,7 +61,7 @@ class App extends React.Component {
         <Header cartCount={this.state.cartCount}/>
           <Switch>
             <Route path='/cart'>
-                <Cart cart={this.state.cart}/>
+                <Cart cart={this.state.cart} remove={this.removeItem.bind(this)}/>
             </Route>
             <Route path='/design'>
                 <Design cart={this.addToCart.bind(this)}/>
