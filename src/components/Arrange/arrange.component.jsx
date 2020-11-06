@@ -10,7 +10,8 @@ class Arrange extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            confirm: false
+            confirm: false,
+            currentClick: ''
         }
 
         this.arrangeBouquets = this.arrangeBouquets.bind(this)
@@ -68,12 +69,15 @@ class Arrange extends React.Component {
     }
 
     toggleConfirm() {
-        this.setState({
-            confirm: !this.state.confirm
+        this.setState((state)=>{ 
+            return {confirm: !state.confirm}
         })
     }
 
-    handleClick() {
+    handleClick(e) {
+        console.log()
+        this.setState({ currentClick: e })
+        this.props.addBouquet(e)
         this.toggleConfirm()
     }
 
@@ -88,7 +92,7 @@ class Arrange extends React.Component {
             return(
                 <div id='bouquet-choices'>
                     {this.arrangeBouquets()}
-                    <Confirm addBouquet={this.props.addBouquet} /> 
+                    <Confirm close={this.toggleConfirm.bind(this)} thisItem={this.state.currentClick} /> 
                 </div>
             )
         }

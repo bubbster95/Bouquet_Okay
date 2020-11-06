@@ -26,7 +26,7 @@ class App extends React.Component {
   addToCart(e) {
     if (e.target.parentElement.children[0].className === 'bouquet') {
         let image = e.target.parentElement.children[0].style.backgroundImage;
-        let price = e.target.parentElement.children[1].innerHTML;
+        let price = e.target.parentElement.children[1].attributes[0].value;
         let name = e.target.parentElement.children[2].innerHTML;
         let text = e.target.parentElement.children[3].innerHTML;
         this.setState({
@@ -57,10 +57,6 @@ class App extends React.Component {
         cartCount: state.cartCount-1
       }
     })
-  }
-
-  componentDidUpdate() {
-    console.log('pricing', this.state.cart)
   }
 
   render() {

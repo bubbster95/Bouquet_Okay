@@ -1,9 +1,34 @@
 .confirmation-container {
     position: fixed;
     z-index: 200;
-    width: 75%;
-    height: 200px;
+    width: 80%;
+    height: 220px;
     top: 200px;
-    left: 12%;
+    text-align: center;
+    margin: 0% 10%;
     background-color: pink;
+    border-radius: 10px;
+    border: solid;
+    border-color: rgb(252, 226, 230);
+}
+
+.continue-shopping, .confirm-close, .go-to-cart {
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+    border-radius: 5px;
+    height: 20px;
+}
+
+.continue-shopping:hover, .confirm-close:hover, .go-to-cart:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.continue-shopping, .go-to-cart {
+    margin: 15px auto;
+    display: block;
+}
+
+.confirm-close {
+    float: right;
+    width: 20px;
 }

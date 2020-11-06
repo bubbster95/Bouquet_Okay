@@ -4,7 +4,6 @@ import './flower_total.css'
 
 class Total extends React.Component {
     flowerTotal(items) {
-        console.log('items', items)
         let sum = items.reduce((total, items, index)=> {
             return(index === 0) ? total
             : parseInt(total) + parseInt(items.price)
