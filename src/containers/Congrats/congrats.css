@@ -2,7 +2,7 @@
     position: fixed;
     z-index: 200;
     width: 80%;
-    height: 25%;
+    height: 30%;
     top: 200px;
     text-align: center;
     margin: 0% 10%;
@@ -11,6 +11,13 @@
     border: solid;
     border-color: rgb(252, 226, 230);
     display: none;
+}
+
+@media only screen and(max-width: 500px) {
+    .congrats-container {
+        width: 10px;
+        height: 25px;
+    }
 }
 
 .continue-shopping, .congrats-close, .go-to-cart {

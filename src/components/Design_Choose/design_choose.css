@@ -6,8 +6,19 @@
     height: 50%;
     border-radius: 5px;
     text-align: center;
-
     overflow: hidden;
+}
+
+@media only screen and (min-width: 500px) {
+    .design-choose {
+        position: relative;
+        display: inline-block;
+        margin: 20px;
+        width: 35%;
+        border-radius: 5px;
+        text-align: center;
+        overflow: hidden;
+    }
 }
 
 #design-button, #choose-button {

@@ -34,10 +34,10 @@ class Arrange extends React.Component {
                 let url = Bouquets[key].url;
                 let hoverText = Bouquets[key].meaning;
                 let value= Bouquets[key].value;
-                return <div key={key} className='bouquet-box'>
+                return <div key={key} className='arrange-box'>
 
                     <button
-                    className='bouquet'
+                    className='arrange'
                     onClick={this.handleClick}
                     onMouseOver={() => this.handleHover(`${key}-text`)}
                     onMouseLeave={() => this.handleHoverOff(`${key}-text`)}
@@ -46,13 +46,13 @@ class Arrange extends React.Component {
                     id={key}
                     value={key.value}
                     ></button>
-                    <div value={value} className='bouquet-price'>${value}</div>
+                    <div value={value} className='arrange-price'>${value}</div>
                     <h2 
                         id={`${key}-title`}
                         onClick={this.handleClick}
                         onMouseOver={() => this.handleHover(`${key}-text`)}
                         onMouseLeave={() => this.handleHoverOff(`${key}-text`)}
-                        className='bouquet-name'
+                        className='arrange-name'
                     >{key}
                     </h2>
 
@@ -61,7 +61,7 @@ class Arrange extends React.Component {
                     onClick={this.handleClick}
                     onMouseOver={() => this.handleHover(`${key}-text`)}
                     onMouseLeave={() => this.handleHoverOff(`${key}-text`)}
-                    className='bouquet-text'
+                    className='arrange-text'
                     >{hoverText}</p>
                     
                 </div>
@@ -84,13 +84,13 @@ class Arrange extends React.Component {
     render() {
         if (this.state.confirm === false) {
             return(
-                <div id='bouquet-choices'>
+                <div id='arrange-choices'>
                     {this.arrangeBouquets()}
                 </div>
             )
         } else {
             return(
-                <div id='bouquet-choices'>
+                <div id='arrange-choices'>
                     {this.arrangeBouquets()}
                     <Confirm close={this.toggleConfirm.bind(this)} thisItem={this.state.currentClick} /> 
                 </div>

@@ -8,6 +8,7 @@ class Home extends React.Component {
     render() {
         return (
             <div className='content'>
+                <h1 className='home-title'>Bouq-A-Okay</h1>
                 <DesignChoose design={true}/>
                 <DesignChoose />
             </div>

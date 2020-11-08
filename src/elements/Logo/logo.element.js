@@ -8,7 +8,7 @@ function Logo(link) {
             <Link to='/'>
                 <img
                     className='logo'
-                    src='/assets/images/reactLogo.png'
+                    src='/assets/flowerLogo.png'
                     width='30px'
                     alt='site logo'>
                 </img>

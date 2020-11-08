@@ -16,7 +16,7 @@ class Items extends React.Component {
                         <div className='item-image' style={{backgroundImage: item.image, backgroundSize: 'contain', backgroundRepeat: 'no-repeat', backgroundPosition: 'center'}}></div>
                         <div className='item-specs'>
                             <button className='remove' value={index} onClick={this.props.remove}>X</button>
-                            <h2 key={`custom-title${item.colors[0]}`}>Cutsom Bouquet</h2>
+                            <h2 key={`custom-title${item.colors[0]}`}>Custom Bouquet</h2>
                             <div key={`custom-colors${item.colors[0]}`}className='item-colors'>
                                 {item.colors.map(color => {
                                     return <div

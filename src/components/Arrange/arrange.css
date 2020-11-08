@@ -1,13 +1,11 @@
-#bouquet-choices {
+#arrange-choices {
     position: relative;
-    justify-content: space-between;
     border-radius: 5px;
-    overflow: scroll;
     width: 90%;
     margin: auto;
 }
 
-.bouquet-box {
+.arrange-box {
     position: relative;
     display: block;
     z-index: 1;
@@ -18,7 +16,13 @@
     text-transform: capitalize;
 }
 
-.bouquet {
+@media screen and(min-width: 700px) {
+    .arrange-box {
+        background-color: red;
+    }
+}
+
+.arrange {
     position: relative;
     background-color: white;
     z-index: 1;
@@ -32,24 +36,25 @@
 }
 
 
-.bouquet:hover {
+.arrange:hover {
     top: -4px;
     border-color: rgb(130, 200, 255);
 }
 
-.bouquet-name {
+.arrange-name {
     position: relative;
     cursor: pointer;
     z-index: 3;
     margin: auto;
     top: -20px;
     font-size: 20px;
-    width: 250px;
+    width: 100%;
+    text-align: center;
     border-radius: 0px 0px 5px 5px;
     background-color: pink;
 }
 
-.bouquet-text {
+.arrange-text {
     display: none;
     position: relative;
     cursor: pointer;
@@ -62,7 +67,7 @@
     background-color: rgba(255, 192, 203, .7);
 }
 
-.bouquet-price {
+.arrange-price {
     position: relative;
     background-color: rgba(255, 192, 203, .7);
     border-radius: 5px;
