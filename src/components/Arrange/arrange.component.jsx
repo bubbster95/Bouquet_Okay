@@ -93,9 +93,7 @@ class Arrange extends React.Component {
         } else {
             return(
                 <div id='arrange-choices'>
-                    <div className="arrange-choices">
                         {this.arrangeBouquets()}
-                    </div>
                     <Confirm close={this.toggleConfirm.bind(this)} thisItem={this.state.currentClick} /> 
                 </div>
             )

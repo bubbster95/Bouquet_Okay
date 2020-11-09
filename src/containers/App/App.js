@@ -24,7 +24,7 @@ class App extends React.Component {
   }
 
   addToCart(e) {
-    if (e.target.parentElement.children[0].className === 'bouquet') {
+    if (e.target.parentElement.children[0].className === 'arrange') {
         let image = e.target.parentElement.children[0].style.backgroundImage;
         let price = e.target.parentElement.children[1].attributes[0].value;
         let name = e.target.parentElement.children[2].innerHTML;
