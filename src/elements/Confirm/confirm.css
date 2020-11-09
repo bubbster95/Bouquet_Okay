@@ -1,15 +1,22 @@
-.confirmation-container {
+
+.confirmation-box {
     position: fixed;
     z-index: 200;
     width: 80%;
     height: 220px;
     top: 200px;
-    text-align: center;
-    margin: 0% 10%;
+    left: 10%;
     background-color: pink;
     border-radius: 10px;
     border: solid;
     border-color: rgb(252, 226, 230);
+}
+
+@media (min-width: 700px) {
+    .confirmation-box {
+        width: 50%;
+        left: 25%;
+    }
 }
 
 .continue-shopping, .confirm-close, .go-to-cart {
@@ -31,4 +38,10 @@
 .confirm-close {
     float: right;
     width: 20px;
+}
+
+@media only screen and(min-width: 500px) {
+    .confirm-close {
+        background-color: red;
+    }
 }

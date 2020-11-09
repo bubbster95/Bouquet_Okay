@@ -1,7 +1,7 @@
 #arrange-choices {
     position: relative;
     border-radius: 5px;
-    width: 90%;
+    width: 100%;
     margin: auto;
 }
 
@@ -14,12 +14,6 @@
     width: 250px;
     height: 250px;
     text-transform: capitalize;
-}
-
-@media screen and(min-width: 700px) {
-    .arrange-box {
-        background-color: red;
-    }
 }
 
 .arrange {
@@ -56,12 +50,12 @@
 
 .arrange-text {
     display: none;
-    position: relative;
+    position: absolute;
     cursor: pointer;
     z-index: 2;
-    margin: auto;
+    margin: 100px 0px;
     padding: 10px;
-    top: -150px;
+    top: -1px;
     width: 230px;
     font-size: 20px;
     background-color: rgba(255, 192, 203, .7);
@@ -76,4 +70,11 @@
     z-index: 100;
     float: right;
     top: -250px;
+}
+
+@media (min-width: 700px) {
+    .arrange-box {
+        display: inline-block;
+        margin: 20px;
+    }
 }

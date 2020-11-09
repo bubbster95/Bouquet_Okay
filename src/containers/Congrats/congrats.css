@@ -2,10 +2,9 @@
     position: fixed;
     z-index: 200;
     width: 80%;
-    height: 30%;
     top: 200px;
+    left: 10%;
     text-align: center;
-    margin: 0% 10%;
     background-color: pink;
     border-radius: 10px;
     border: solid;
@@ -13,10 +12,10 @@
     display: none;
 }
 
-@media only screen and(max-width: 500px) {
+@media (min-width: 700px) {
     .congrats-container {
-        width: 10px;
-        height: 25px;
+        width: 50%;
+        left: 25%;
     }
 }
 

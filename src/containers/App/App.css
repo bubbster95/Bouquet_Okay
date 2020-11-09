@@ -5,3 +5,20 @@
     width: 100%;
     margin: 20px auto;
 }
+
+body {
+    background-repeat: repeat;
+    background-position: center;
+}
+
+h1, h2 {
+    font-family: 'Itim', cursive;
+}
+
+h3, p, button, div {
+    font-family: 'Signika', sans-serif;
+}
+
+button {
+    /* font-size: 15px; */
+}

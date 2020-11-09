@@ -8,7 +8,7 @@ class Confirm extends React.Component {
     render() {
     let name = this.props.thisItem.target.parentElement.children[2].innerHTML;
         return(
-            <div className='confirmation-container'>
+            <div className='confirmation-box'>
                 <button className='confirm-close' onClick={this.props.close}>X</button>
                 <h1 className='confirm-title'>Added To Your Cart</h1>
                 <br></br>

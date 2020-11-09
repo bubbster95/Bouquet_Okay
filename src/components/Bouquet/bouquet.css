@@ -14,6 +14,7 @@
     position: relative;
     display: flex;
     justify-content: space-between;
+    background-color: white;
     border: solid pink;
     border-radius: 5px;
     overflow-x: scroll;
