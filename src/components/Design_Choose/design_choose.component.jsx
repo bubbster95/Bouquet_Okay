@@ -14,11 +14,11 @@ class DesignChoose extends React.Component {
                     style={{ textDecoration: 'none' }}>
                         <img
                             className='design-image'
-                            src='/assets/floral-supplies.jpg'
+                            src='/assets/buildBouquet.jpg'
                             alt='A beautiful bouquet design'
                         ></img>
                         <button id='design-button'>
-                            Design a bouquet
+                            Design a Bouquet
                         </button>
                     </Link>
                 </div>
@@ -36,7 +36,7 @@ class DesignChoose extends React.Component {
                             alt='A beautiful bouquet design'
                         ></img>
                         <button id='choose-button'>
-                            Choose a bouquet
+                            Choose a Bouquet
                         </button>
                     </Link>
                 </div>
